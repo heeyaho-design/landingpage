@@ -1,134 +1,317 @@
 
-@charset "UTF-8";
+/* =========================
+   1. 글씨체 및 공통 색상
+========================= */
+
+/* 부드러운 한글 글씨체 */
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap');
 
 :root {
-  --color-ivory: #f6f3e9;
-  --color-cream: #ebe5d6;
-  --color-green: #526b50;
-  --color-green-dark: #344b38;
-  --color-green-light: #dce5d6;
-  --color-brown: #80664e;
-  --color-brown-dark: #4d3d30;
-  --color-text: #37382f;
-  --color-muted: #77786e;
-  --color-white: #fffefa;
-  --color-line: #dedbcc;
-  --font-main: "Pretendard", "Noto Sans KR", Arial, sans-serif;
-  --content-width: 1160px;
+    --main-color: #536b50;
+    --sub-color: #e9eddf;
+    --point-color: #a47c56;
+    --background-color: #f8f6ef;
+    --text-color: #393d35;
+    --white-color: #ffffff;
+
+    /* 글씨체 */
+    --title-font: 'Gowun Dodum', sans-serif;
+--body-font: 'Gowun Dodum', sans-serif;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* 모든 요소 기본 설정 */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  margin: 0;
-  color: var(--color-text);
-  background: var(--color-ivory);
-  font-family: var(--font-main);
-  line-height: 1.7;
-  word-break: keep-all;
-  overflow-wrap: break-word;
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.8;
+    overflow-x: hidden;
 }
-img, video, iframe { max-width: 100%; }
-img { display: block; height: auto; }
-a { color: inherit; text-decoration: none; }
-button, input, textarea, select { font: inherit; }
-p { margin: 0 0 1rem; }
-h1, h2, h3 { line-height: 1.25; margin: 0 0 1rem; }
-ul { padding-left: 1.2rem; }
-.skip-link {
-  position: absolute; left: -9999px; top: 0;
-  background: var(--color-green-dark); color: var(--color-white);
-  padding: .7rem 1rem; z-index: 2000;
+h1,
+h2,
+h3,
+.logo,
+.nav-menu a,
+.footer-logo,
+strong,
+b,
+label {
+    font-family: var(--body-font);
+    font-weight: 600;
 }
-.skip-link:focus { left: 1rem; top: 1rem; }
+img,
+video,
+iframe {
+    max-width: 100%;
+}
 
-.site-header {
-  position: sticky; top: 0; z-index: 1000;
-  background: var(--color-ivory);
-  border-bottom: 1px solid var(--color-line);
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* =========================
+   2. 상단 로고 및 메뉴
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
 .header-inner {
-  width: min(100% - 2.5rem, var(--content-width));
-  min-height: 76px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
-}
-.brand {
-  color: var(--color-green-dark); font-family: Georgia, serif;
-  font-size: 1.25rem; font-weight: 700; letter-spacing: .04em;
-  white-space: nowrap;
-}
-.menu-toggle { position: absolute; opacity: 0; pointer-events: none; }
-.menu-button {
-  display: none; width: 44px; height: 44px; cursor: pointer;
-  align-items: center; justify-content: center; flex-direction: column; gap: 5px;
-  border: 1px solid var(--color-line); border-radius: 8px;
-}
-.menu-button span { width: 19px; height: 2px; background: var(--color-green-dark); }
-.main-nav ul {
-  display: flex; align-items: center; gap: clamp(.8rem, 2vw, 2rem);
-  list-style: none; padding: 0; margin: 0;
-}
-.main-nav a {
-  display: block; padding: 1.6rem .15rem;
-  font-size: .94rem; font-weight: 600; color: var(--color-brown-dark);
-  border-bottom: 2px solid transparent;
-}
-.main-nav a:hover, .main-nav a[aria-current="page"] {
-  color: var(--color-green-dark); border-bottom-color: var(--color-green);
-}
-main { min-height: 65vh; }
-.container { width: min(100% - 2.5rem, var(--content-width)); margin: 0 auto; }
-.page-heading { padding: 5rem 0 2.5rem; text-align: center; }
-.eyebrow {
-  color: var(--color-brown); text-transform: uppercase;
-  letter-spacing: .18em; font-size: .78rem; font-weight: 700;
-}
-.page-heading h1 { color: var(--color-green-dark); font-size: clamp(2rem, 5vw, 3.4rem); margin: .6rem 0; }
-.page-heading p { color: var(--color-muted); max-width: 650px; margin: 0 auto; }
-.section-title { color: var(--color-green-dark); font-size: clamp(1.6rem, 3vw, 2.3rem); }
-.section-copy { color: var(--color-muted); }
-.rounded-image { width: 100%; height: 100%; object-fit: cover; border-radius: 18px; }
-.image-frame { overflow: hidden; border-radius: 18px; background: var(--color-cream); }
-.pill {
-  display: inline-block; padding: .45rem .9rem; border-radius: 99px;
-  background: var(--color-green-light); color: var(--color-green-dark);
-  font-size: .82rem; font-weight: 700;
-}
-.button {
-  display: inline-flex; justify-content: center; align-items: center;
-  min-height: 48px; padding: .7rem 1.35rem; border-radius: 4px;
-  background: var(--color-green); color: var(--color-white); font-weight: 700;
-  border: 1px solid var(--color-green); cursor: pointer;
-}
-.button:hover { background: var(--color-green-dark); border-color: var(--color-green-dark); }
-.button-light { background: transparent; color: var(--color-green-dark); border-color: var(--color-green); }
-.site-footer { margin-top: 5rem; background: var(--color-green-dark); color: var(--color-ivory); }
-.footer-inner {
-  width: min(100% - 2.5rem, var(--content-width)); margin: 0 auto;
-  padding: 2.5rem 0; display: flex; justify-content: space-between; gap: 2rem;
-  align-items: flex-start;
-}
-.footer-brand { font-family: Georgia, serif; font-size: 1.3rem; font-weight: 700; }
-.footer-note { color: #d7ddcf; font-size: .88rem; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 1rem; font-size: .9rem; }
-.footer-links a { text-decoration: underline; text-underline-offset: 3px; }
+    max-width: 1300px;
+    min-height: 85px;
+    margin: auto;
+    padding: 12px 30px;
 
-@media (max-width: 760px) {
-  .header-inner { min-height: 66px; position: relative; }
-  .menu-button { display: flex; }
-  .main-nav {
-    display: none; position: absolute; top: 66px; left: 0; right: 0;
-    background: var(--color-ivory); border-bottom: 1px solid var(--color-line);
-    padding: .4rem 1.25rem 1rem;
-  }
-  .main-nav ul { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
-  .main-nav a { padding: .85rem .3rem; border-bottom: 1px solid var(--color-line); }
-  .menu-toggle:checked ~ .main-nav { display: block; }
-  .menu-toggle:focus-visible + .menu-button { outline: 3px solid var(--color-brown); }
-  .page-heading { padding: 3.5rem 0 2rem; }
-  .footer-inner { flex-direction: column; }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
 }
-@media (max-width: 420px) {
-  .container, .header-inner, .footer-inner { width: min(100% - 1.5rem, var(--content-width)); }
-  .brand { font-size: 1.05rem; }
+
+/* 왼쪽 브랜드 이름 */
+
+.logo {
+    flex-shrink: 0;
+    color: var(--main-color);
+    font-family: var(--title-font);
+    font-size: 30px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* 메뉴 영역 */
+
+nav {
+    position: static;
+    background-color: transparent;
+    border: none;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+}
+
+/* PC 메뉴 */
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    display: block;
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.nav-menu a:hover {
+    color: var(--main-color);
+}
+
+/* 모바일 메뉴 버튼 */
+
+.menu-toggle,
+.menu-button {
+    display: none;
+}
+
+
+/* =========================
+   3. 공통 콘텐츠
+========================= */
+
+main {
+    width: 100%;
+}
+
+.page-title {
+    text-align: center;
+    padding: 75px 20px 45px;
+}
+
+.page-title h1 {
+    color: var(--main-color);
+    font-family: var(--title-font);
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    color: #77786f;
+}
+
+.content-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+.section-heading {
+    text-align: center;
+    color: var(--main-color);
+    font-family: var(--title-font);
+    font-size: 28px;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   4. 하단 푸터
+========================= */
+
+footer {
+    background-color: var(--main-color);
+    color: var(--white-color);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px;
+    font-size: 14px;
+}
+
+.footer-logo {
+    font-family: var(--title-font);
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   5. 반응형 모바일 설정
+========================= */
+
+@media (max-width: 768px) {
+
+    .header-inner {
+        min-height: 70px;
+        padding: 10px 20px;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: clamp(20px, 5vw, 26px);
+    }
+
+    nav {
+        margin-left: auto;
+    }
+
+    .nav-inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    /* 체크박스는 보이지 않게 */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* 햄버거 버튼 */
+    .menu-button {
+        display: block;
+        color: var(--main-color);
+        font-size: 28px;
+        cursor: pointer;
+        line-height: 1;
+        padding: 10px;
+    }
+
+    /* 접혀 있는 메뉴 */
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 18px);
+        right: -20px;
+
+        width: min(220px, 75vw);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 8px 15px;
+        background-color: var(--white-color);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 10px 10px;
+    }
+
+    /* 버튼을 누르면 메뉴 펼치기 */
+    .menu-toggle:checked ~ .nav-menu {
+        display: flex;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid #eeeeea;
+        text-align: center;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .page-title {
+        padding: 45px 15px 25px;
+    }
+
+    .page-title h1 {
+        font-size: 28px;
+    }
+
+    .content-section {
+        padding: 35px 20px;
+    }
+
+    .section-heading {
+        font-size: 23px;
+    }
 }
