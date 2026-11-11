@@ -1,108 +1,101 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>마고포레스트 & 마고플레인 | 예약 및 문의</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/contact.css">
-</head>
-<body>
-
-
-<header>
-    <section class="header-inner">
-
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+  <body>
+    <header>
+      <section class="header-inner">
         <a href="index.html" class="logo" title="마고포레스트 홈으로 이동">
-            MARGAUX FOREST
+          MARGAUX FOREST
         </a>
 
         <nav>
-            <section class="nav-inner">
+          <section class="nav-inner">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
 
-                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button" title="메뉴 펼치기">
+              ☰
+            </label>
 
-                <label for="menu-toggle" class="menu-button" title="메뉴 펼치기">
-                    ☰
-                </label>
-
-                <ul class="nav-menu">
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="about.html">소개</a></li>
-                    <li><a href="menu.html">메뉴</a></li>
-                    <li><a href="location.html">위치정보</a></li>
-                    <li><a href="contact.html">예약·문의</a></li>
-                </ul>
-
-            </section>
+            <ul class="nav-menu">
+              <li><a href="index.html">홈</a></li>
+              <li><a href="about.html">소개</a></li>
+              <li><a href="menu.html">메뉴</a></li>
+              <li><a href="location.html">위치정보</a></li>
+              <li><a href="contact.html">예약·문의</a></li>
+            </ul>
+          </section>
         </nav>
+      </section>
+    </header>
 
-    </section>
-</header>
-
-
-<main>
-
-    <section class="page-title">
+    <main>
+      <section class="page-title">
         <h1>RESERVATION & CONTACT</h1>
         <p>방문 예약 및 문의사항을 남겨주세요.</p>
-    </section>
 
-    <section class="content-section">
+        <p class="contact-phone">☎ 전화 문의 : 전화번호를 입력하세요</p>
+      </section>
 
+      <section class="content-section">
         <section class="contact-form">
-            <h2 class="section-heading">예약 및 문의하기</h2>
+          <h2 class="section-heading">예약 및 문의하기</h2>
 
-            <form action="#" method="get">
+          <form action="#" method="get">
+            <label for="name">이름</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="이름을 입력하세요"
+              required
+            />
 
-                <label for="store">방문 매장</label>
-                <select id="store" name="store" required>
-                    <option value="">매장을 선택하세요</option>
-                    <option value="마고포레스트">마고포레스트</option>
-                    <option value="마고플레인">마고플레인</option>
-                </select>
+            <label for="phone">연락처</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="연락처를 입력하세요"
+              required
+            />
 
-                <label for="name">이름</label>
-                <input type="text" id="name" name="name"
-                       placeholder="이름을 입력하세요" required>
+            <label for="date">방문 희망 날짜</label>
+            <input type="date" id="date" name="date" required />
 
-                <label for="phone">연락처</label>
-                <input type="tel" id="phone" name="phone"
-                       placeholder="연락처를 입력하세요" required>
+            <label for="people">방문 인원</label>
+            <select id="people" name="people" required>
+              <option value="">인원을 선택하세요</option>
+              <option value="1~2명">1~2명</option>
+              <option value="3~4명">3~4명</option>
+              <option value="5~6명">5~6명</option>
+              <option value="7명 이상">7명 이상</option>
+            </select>
 
-                <label for="date">방문 희망 날짜</label>
-                <input type="date" id="date" name="date" required>
+            <label for="message">문의 내용</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="문의사항을 입력하세요"
+            ></textarea>
 
-                <label for="people">방문 인원</label>
-                <select id="people" name="people" required>
-                    <option value="">인원을 선택하세요</option>
-                    <option value="1~2명">1~2명</option>
-                    <option value="3~4명">3~4명</option>
-                    <option value="5~6명">5~6명</option>
-                    <option value="7명 이상">7명 이상</option>
-                </select>
-
-                <label for="message">문의 내용</label>
-                <textarea id="message" name="message"
-                          rows="5"
-                          placeholder="문의사항을 입력하세요"></textarea>
-
-                <button type="submit">문의 내용 제출</button>
-
-            </form>
+            <button type="submit">문의 내용 제출</button>
+          </form>
         </section>
+      </section>
+    </main>
 
-    </section>
-
-</main>
-
-<footer>
-    <p class="footer-logo">MAGO</p>
-    <p>마고포레스트 & 마고플레인</p>
-    <p>경상북도 경산시</p>
-    <p>© MAGO. All Rights Reserved.</p>
-</footer>
-
-</body>
+    <footer>
+      <p class="footer-logo">MARGAUX FOREST</p>
+      <p>마고포레스트</p>
+      <p>경북 경산시 경안로73길 20</p>
+      <p>© margaux. Have a happy day!</p>
+    </footer>
+  </body>
 </html>

@@ -1,56 +1,83 @@
-
 .contact-form {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 40px;
-    background: var(--white-color);
-    border-radius: 10px;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px;
+  background: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
 }
 
 .contact-form form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-form label {
-    margin: 15px 0 7px;
-    font-weight: bold;
-    color: var(--main-color);
+  margin: 15px 0 7px;
+  font-weight: bold;
+  color: var(--main-color);
 }
 
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
-    width: 100%;
-    min-width: 0;
-    padding: 13px;
-    border: 1px solid #d9d9d0;
-    border-radius: 5px;
-    background: var(--background-color);
+  width: 100%;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #d9d9d0;
+  border-radius: 5px;
+  background: var(--background-color);
 }
 
 .contact-form textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 .contact-form button {
-    margin-top: 25px;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    background: var(--main-color);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+  margin-top: 25px;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background: var(--main-color);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .contact-form button:hover {
-    background: var(--point-color);
+  background: var(--point-color);
+}
+
+/* 전화 문의 강조 */
+.contact-phone {
+  display: inline-block;
+  width: fit-content;
+  margin: 25px auto 0;
+  padding: 13px 28px;
+  background-color: #f4f1e7;
+  color: #244b37;
+  border: 1px solid #b69b6b;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.contact-phone:hover {
+  background-color: #b69b6b;
+  color: #ffffff;
+  transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {
-    .contact-form {
-        padding: 20px;
-    }
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-phone {
+    font-size: 15px;
+    padding: 11px 20px;
+  }
 }
