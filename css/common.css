@@ -1,0 +1,316 @@
+
+/* =========================
+   1. 글씨체 및 공통 색상
+========================= */
+
+/* 부드러운 한글 글씨체 */
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap');
+
+:root {
+    --main-color: #536b50;
+    --sub-color: #e9eddf;
+    --point-color: #a47c56;
+    --background-color: #f8f6ef;
+    --text-color: #393d35;
+    --white-color: #ffffff;
+
+    /* 글씨체 */
+    --title-font: 'Gowun Dodum', sans-serif;
+--body-font: 'Gowun Dodum', sans-serif;
+}
+
+/* 모든 요소 기본 설정 */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+.logo,
+.nav-menu a,
+.footer-logo,
+strong,
+b,
+label {
+    font-family: var(--body-font);
+    font-weight: 600;
+}
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* =========================
+   2. 상단 로고 및 메뉴
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.header-inner {
+    max-width: 1300px;
+    min-height: 85px;
+    margin: auto;
+    padding: 12px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* 왼쪽 브랜드 이름 */
+
+.logo {
+    flex-shrink: 0;
+    color: var(--main-color);
+    font-family: var(--title-font);
+    font-size: 30px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* 메뉴 영역 */
+
+nav {
+    position: static;
+    background-color: transparent;
+    border: none;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+}
+
+/* PC 메뉴 */
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    display: block;
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.nav-menu a:hover {
+    color: var(--main-color);
+}
+
+/* 모바일 메뉴 버튼 */
+
+.menu-toggle,
+.menu-button {
+    display: none;
+}
+
+
+/* =========================
+   3. 공통 콘텐츠
+========================= */
+
+main {
+    width: 100%;
+}
+
+.page-title {
+    text-align: center;
+    padding: 75px 20px 45px;
+}
+
+.page-title h1 {
+    color: var(--main-color);
+    font-family: var(--title-font);
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    color: #77786f;
+}
+
+.content-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+.section-heading {
+    text-align: center;
+    color: var(--main-color);
+    font-family: var(--title-font);
+    font-size: 28px;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   4. 하단 푸터
+========================= */
+
+footer {
+    background-color: var(--main-color);
+    color: var(--white-color);
+    padding: 18px 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 3px;
+    font-size: 13px;
+}
+
+.footer-logo {
+    font-family: var(--title-font);
+    font-size: 21px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+/* =========================
+   5. 반응형 모바일 설정
+========================= */
+
+@media (max-width: 768px) {
+
+    .header-inner {
+        min-height: 70px;
+        padding: 10px 20px;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: clamp(20px, 5vw, 26px);
+    }
+
+    nav {
+        margin-left: auto;
+    }
+
+    .nav-inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    /* 체크박스는 보이지 않게 */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* 햄버거 버튼 */
+    .menu-button {
+        display: block;
+        color: var(--main-color);
+        font-size: 28px;
+        cursor: pointer;
+        line-height: 1;
+        padding: 10px;
+    }
+
+    /* 접혀 있는 메뉴 */
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 18px);
+        right: -20px;
+
+        width: min(220px, 75vw);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 8px 15px;
+        background-color: var(--white-color);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 10px 10px;
+    }
+
+    /* 버튼을 누르면 메뉴 펼치기 */
+    .menu-toggle:checked ~ .nav-menu {
+        display: flex;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid #eeeeea;
+        text-align: center;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .page-title {
+        padding: 45px 15px 25px;
+    }
+
+    .page-title h1 {
+        font-size: 28px;
+    }
+
+    .content-section {
+        padding: 35px 20px;
+    }
+
+    .section-heading {
+        font-size: 23px;
+    }
+}
