@@ -1,53 +1,442 @@
+/* =================================
+   영상 영역
+================================= */
 
 .video-section {
-    text-align: center;
+  text-align: center;
 }
 
-.video-section video {
-    display: block;
-    width: 100%;
-    max-height: 550px;
-    object-fit: cover;
-    border-radius: 10px;
+.video-section iframe {
+  display: block;
+  width: 100%;
+  max-width: 393px;
+  height: 699px;
+  margin: 0 auto;
+  border-radius: 10px;
 }
+
+/* =================================
+   기존 소개 영역
+================================= */
 
 .about-item {
-    display: flex;
-    align-items: center;
-    gap: 55px;
+  display: flex;
+  align-items: center;
+  gap: 55px;
 }
 
 .about-item > img {
-    width: 55%;
-    height: 330px;
-    border-radius: 10px;
+  width: 55%;
+  height: 330px;
+  border-radius: 10px;
 }
 
 .about-item > section {
-    flex: 1;
+  flex: 1;
 }
 
 .about-item h2 {
-    color: var(--main-color);
+  color: var(--main-color);
 }
 
 .about-item p {
-    line-height: 2;
+  line-height: 2;
 }
 
 .about-item.reverse {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
-@media (max-width: 768px) {
-    .about-item,
-    .about-item.reverse {
-        flex-direction: column;
-        gap: 20px;
-    }
+/* =================================
+   사진 갤러리 공통
+================================= */
 
-    .about-item > img {
-        width: 100%;
-        height: 250px;
-    }
+.gallery-section,
+.seating-section {
+  padding-top: 70px;
+  padding-bottom: 75px;
+}
+
+.gallery-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gallery-heading span,
+.study-text span {
+  color: #a58b5d;
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.gallery-heading h2,
+.study-text h2 {
+  margin: 12px 0;
+  color: #244b37;
+  font-size: 30px;
+}
+
+.gallery-heading p {
+  color: #777b70;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =================================
+   숲속에서 만나는 여유
+   왼쪽 세로 1장 + 오른쪽 가로 2장
+================================= */
+
+.main-space-gallery {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* 사진 공통 */
+
+.main-space-gallery figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.main-space-gallery img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.main-space-gallery figure:hover img {
+  transform: scale(1.04);
+}
+
+/* 왼쪽 세로 사진 */
+
+.space-main-photo {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  min-width: 0;
+  background: #ffffff;
+}
+
+.space-main-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  height: auto;
+  object-fit: cover;
+  flex: 1;
+}
+
+/* 사진 아래 설명 */
+
+.space-main-photo figcaption {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 17px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.space-main-photo figcaption h3 {
+  margin: 0;
+  color: #244b37;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* 오른쪽 가로 사진 2장 */
+
+.nature-photo-group {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 22px;
+  min-width: 0;
+}
+
+.nature-photo-group figure {
+  min-height: 0;
+}
+
+.nature-photo-group img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =================================
+   넉넉한 공간과 다양한 좌석
+================================= */
+
+.seating-section {
+  padding-top: 45px;
+}
+
+.seating-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.seating-gallery figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.seating-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+
+  /* 세 사진의 색감 통일 */
+  filter: brightness(1.03) saturate(0.88) contrast(0.96);
+
+  transition: transform 0.5s ease;
+}
+
+.seating-gallery figure:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.seating-gallery figure:hover img {
+  transform: scale(1.04);
+}
+
+/* =================================
+   혼자만의 집중 공간
+================================= */
+
+.study-section {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 45px;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 90px;
+}
+
+.study-photo {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+}
+
+.study-photo img {
+  display: block;
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.study-photo:hover img {
+  transform: scale(1.04);
+}
+
+.study-text {
+  padding: 20px;
+}
+
+.study-text h2 {
+  margin-top: 15px;
+}
+
+.study-text p {
+  color: #777b70;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* =================================
+   어린이 모래놀이 공간
+================================= */
+
+.kids-gallery-section {
+  padding: 80px 5%;
+  background-color: #f1f0e7;
+}
+
+.kids-gallery-section .gallery-heading {
+  margin-bottom: 40px;
+}
+
+.kids-gallery {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.kids-gallery figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.kids-gallery img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.kids-gallery figure:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.kids-gallery figure:hover img {
+  transform: scale(1.04);
+}
+
+/* =================================
+   모바일 반응형
+================================= */
+
+@media (max-width: 768px) {
+  /* 영상 */
+
+  .video-section iframe {
+    width: 100%;
+    max-width: 350px;
+    height: 620px;
+  }
+
+  /* 기존 소개 영역 */
+
+  .about-item,
+  .about-item.reverse {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-item > img {
+    width: 100%;
+    height: 250px;
+  }
+
+  /* 갤러리 공통 */
+
+  .gallery-section,
+  .seating-section {
+    padding-top: 45px;
+    padding-bottom: 50px;
+  }
+
+  .gallery-heading h2,
+  .study-text h2 {
+    font-size: 24px;
+  }
+
+  .gallery-heading p {
+    font-size: 13px;
+  }
+
+  /* 숲속에서 만나는 여유 */
+
+  .main-space-gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .space-main-photo img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .nature-photo-group {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  .nature-photo-group figure {
+    min-height: 0;
+  }
+
+  .nature-photo-group img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  /* 좌석 사진 */
+
+  .seating-gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .seating-gallery img {
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+
+  /* 집중 공간 */
+
+  .study-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 55px;
+  }
+
+  .study-photo img {
+    height: 250px;
+  }
+
+  .study-text {
+    padding: 10px 5px;
+  }
+
+  /* 모래놀이 공간 */
+
+  .kids-gallery-section {
+    padding: 55px 6%;
+  }
+
+  .kids-gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .kids-gallery img {
+    height: 260px;
+  }
+}
+/* ABOUT MARGAUX 초록색 제목 바 */
+.page-title {
+  background-color: #244b37;
+  color: #ffffff;
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.page-title h1 {
+  color: #ffffff;
+  margin: 0 0 12px;
+}
+
+.page-title p {
+  color: #ffffff;
+  margin: 0;
 }
