@@ -90,6 +90,9 @@
 
 .main-space-gallery {
   display: grid;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 22px;
   align-items: stretch;
@@ -178,12 +181,15 @@
 }
 
 .seating-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 24px;
+  --swiper-scrollbar-size: 4px;
+  --swiper-scrollbar-bg-color: rgba(36, 75, 55, 0.15);
+  --swiper-scrollbar-drag-bg-color: var(--main-color);
 }
 
-.seating-gallery figure {
+.seating-gallery .swiper-slide {
   margin: 0;
   overflow: hidden;
   border-radius: 8px;
@@ -194,25 +200,28 @@
     box-shadow 0.35s ease;
 }
 
-.seating-gallery img {
+.seating-gallery .swiper-slide img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
+  height: 330px;
   object-fit: cover;
 
-  /* 세 사진의 색감 통일 */
-  filter: brightness(1.03) saturate(0.88) contrast(0.96);
+  filter: brightness(1.08) saturate(0.88) contrast(0.96);
 
   transition: transform 0.5s ease;
 }
 
-.seating-gallery figure:hover {
+.seating-gallery .swiper-slide:nth-child(4) img,
+.seating-gallery .swiper-slide:nth-child(5) img {
+  filter: brightness(1.2) saturate(0.88) contrast(0.96);
+}
+
+.seating-gallery .swiper-slide:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
 
-.seating-gallery figure:hover img {
+.seating-gallery .swiper-slide:hover img {
   transform: scale(1.04);
 }
 
@@ -222,6 +231,7 @@
 
 .study-section {
   display: grid;
+  max-width: 1000px;
   grid-template-columns: 1.2fr 1fr;
   gap: 45px;
   align-items: center;
@@ -297,6 +307,7 @@
   width: 100%;
   height: 340px;
   object-fit: cover;
+  filter: brightness(1.12) saturate(1.1) contrast(1.02);
   transition: transform 0.5s ease;
 }
 
@@ -307,6 +318,14 @@
 
 .kids-gallery figure:hover img {
   transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 /* =================================
@@ -379,18 +398,6 @@
     aspect-ratio: 4 / 3;
   }
 
-  /* 좌석 사진 */
-
-  .seating-gallery {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .seating-gallery img {
-    aspect-ratio: 16 / 9;
-    height: auto;
-  }
-
   /* 집중 공간 */
 
   .study-section {
@@ -401,6 +408,10 @@
   }
 
   .study-photo img {
+    height: 250px;
+  }
+
+  .seating-gallery .swiper-slide img {
     height: 250px;
   }
 

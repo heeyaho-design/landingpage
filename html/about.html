@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>마고포레스트 & 마고플레인 | 카페 소개</title>
     <link rel="stylesheet" href="css/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="css/about.css" />
   </head>
 
@@ -104,28 +108,45 @@
           <p>가족, 친구들과 함께 머물 수 있는 공간</p>
         </section>
 
-        <section class="seating-gallery">
-          <figure>
-            <img
-              src="images/2층 자리.jfif"
-              alt="여러 인원이 함께 앉을 수 있는 좌석"
-            />
-          </figure>
+        <div class="swiper seating-gallery">
+          <div class="swiper-wrapper">
+            <figure class="swiper-slide">
+              <img
+                src="images/좌석사진.jfif"
+                alt="넉넉한 테이블과 좌석이 마련된 카페"
+              />
+            </figure>
 
-          <figure>
-            <img
-              src="images/좌석사진.jfif"
-              alt="넉넉한 테이블과 좌석이 마련된 카페"
-            />
-          </figure>
+            <figure class="swiper-slide">
+              <img
+                src="../images/다운로드.jfif"
+                alt="다양한 좌석이 마련된 카페 공간"
+              />
+            </figure>
 
-          <figure>
-            <img
-              src="images/다인원.jfif"
-              alt="다양한 인원이 이용할 수 있는 카페 좌석"
-            />
-          </figure>
-        </section>
+            <figure class="swiper-slide">
+              <img
+                src="../images/1.PNG"
+                alt="실내 정원과 좌석이 어우러진 카페"
+              />
+            </figure>
+
+            <figure class="swiper-slide">
+              <img
+                src="images/다인원.jfif"
+                alt="다양한 인원이 이용할 수 있는 카페 좌석"
+              />
+            </figure>
+
+            <figure class="swiper-slide">
+              <img
+                src="images/2층 자리.jfif"
+                alt="여러 인원이 함께 앉을 수 있는 좌석"
+              />
+            </figure>
+          </div>
+          <div class="swiper-scrollbar"></div>
+        </div>
       </section>
 
       <!-- 혼자만의 집중 공간 -->
@@ -174,5 +195,31 @@
       <p>경북 경산시 경안로73길 20</p>
       <p>© margaux. Have a happy day!</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      new Swiper(".seating-gallery", {
+        slidesPerView: 1.05,
+        spaceBetween: 16,
+        freeMode: {
+          enabled: true,
+          sticky: false,
+        },
+        scrollbar: {
+          el: ".seating-gallery .swiper-scrollbar",
+          draggable: true,
+        },
+        breakpoints: {
+          600: {
+            slidesPerView: 1.8,
+            spaceBetween: 20,
+          },
+          900: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+        },
+      });
+    </script>
   </body>
 </html>

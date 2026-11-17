@@ -91,3 +91,11 @@
     transform: translateY(-7px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
+
+@media (prefers-reduced-motion: reduce) {
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}

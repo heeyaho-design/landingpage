@@ -81,3 +81,17 @@
     padding: 11px 20px;
   }
 }
+/* 문의 전송 상태 메시지 */
+#form-status {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #244b37;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* 전송 중 버튼 */
+#submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
