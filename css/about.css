@@ -85,80 +85,75 @@
 
 /* =================================
    숲속에서 만나는 여유
-   왼쪽 세로 1장 + 오른쪽 가로 2장
+   왼쪽 가로 2장 + 오른쪽 세로 1장
 ================================= */
 
 .main-space-gallery {
   display: grid;
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 22px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "nature main";
+  gap: 16px;
   align-items: stretch;
 }
 
 /* 사진 공통 */
 
 .main-space-gallery figure {
+  position: relative;
+  z-index: 0;
   margin: 0;
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  transition: scale 0.7s ease-in-out;
 }
 
 .main-space-gallery img {
   display: block;
   width: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: filter 0.35s ease;
 }
 
-.main-space-gallery figure:hover img {
-  transform: scale(1.04);
+@media (hover: hover) and (min-width: 769px) {
+  .gallery-section > .gallery-heading {
+    margin-bottom: 72px;
+  }
+
+  .main-space-gallery figure:hover {
+    z-index: 3;
+    scale: 1.2;
+  }
+
+  .main-space-gallery:has(figure:hover) figure:not(:hover) img {
+    filter: brightness(0.72);
+  }
 }
 
-/* 왼쪽 세로 사진 */
+/* 오른쪽 세로 사진 */
 
 .space-main-photo {
-  display: flex;
-  flex-direction: column;
+  grid-area: main;
   align-self: stretch;
   min-width: 0;
-  background: #ffffff;
 }
 
 .space-main-photo img {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  flex: 1;
 }
 
-/* 사진 아래 설명 */
-
-.space-main-photo figcaption {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 17px 20px;
-  background: #ffffff;
-  text-align: center;
-}
-
-.space-main-photo figcaption h3 {
-  margin: 0;
-  color: #244b37;
-  font-size: 20px;
-  line-height: 1.5;
-}
-
-/* 오른쪽 가로 사진 2장 */
+/* 왼쪽 가로 사진 2장 */
 
 .nature-photo-group {
+  grid-area: nature;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 22px;
+  gap: 16px;
   min-width: 0;
 }
 
@@ -248,7 +243,7 @@
 .study-photo img {
   display: block;
   width: 100%;
-  height: 330px;
+  height: 350px;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -276,19 +271,36 @@
 ================================= */
 
 .kids-gallery-section {
-  padding: 80px 5%;
+  padding: 80px 0;
   background-color: #f1f0e7;
 }
 
 .kids-gallery-section .gallery-heading {
-  margin-bottom: 40px;
+  margin-bottom: 0;
+}
+
+.kids-gallery-layout {
+  display: grid;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 30px;
+  grid-template-columns: 1fr 1.2fr;
+  grid-template-areas: "text photo";
+  gap: 45px;
+  align-items: center;
+}
+
+.kids-gallery-text {
+  grid-area: text;
+  text-align: left;
 }
 
 .kids-gallery {
-  max-width: 1100px;
-  margin: 0 auto;
+  grid-area: photo;
+  width: 100%;
+  margin: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 25px;
 }
 
@@ -305,9 +317,9 @@
 .kids-gallery img {
   display: block;
   width: 100%;
-  height: 340px;
+  height: auto;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  filter: brightness(1.12) saturate(1.1) contrast(1.02);
   transition: transform 0.5s ease;
 }
 
@@ -375,11 +387,15 @@
 
   .main-space-gallery {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "nature";
     gap: 18px;
   }
 
   .space-main-photo img {
-    aspect-ratio: 3 / 4;
+    height: auto;
+    aspect-ratio: 4 / 3;
   }
 
   .nature-photo-group {
@@ -408,7 +424,7 @@
   }
 
   .study-photo img {
-    height: 250px;
+    height: 270px;
   }
 
   .seating-gallery .swiper-slide img {
@@ -422,7 +438,7 @@
   /* 모래놀이 공간 */
 
   .kids-gallery-section {
-    padding: 55px 6%;
+    padding: 55px 0;
   }
 
   .kids-gallery {
@@ -430,9 +446,15 @@
     gap: 18px;
   }
 
-  .kids-gallery img {
-    height: 260px;
+  .kids-gallery-layout {
+    padding: 0 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "text";
+    gap: 20px;
   }
+
 }
 /* ABOUT MARGAUX 초록색 제목 바 */
 .page-title {

@@ -110,25 +110,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      const reducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
-
-      new Swiper(".hero-swiper", {
-        effect: "fade",
-        fadeEffect: { crossFade: true },
-        speed: reducedMotion ? 0 : 1000,
-        loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".hero-swiper .swiper-pagination",
-          type: "progressbar",
-        },
-      });
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>

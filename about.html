@@ -73,33 +73,29 @@
           </p>
         </section>
 
-        <section class="main-space-gallery">
+        <section
+          class="main-space-gallery"
+          data-aos="zoom-in"
+          data-aos-duration="800"
+        >
           <!-- 2층에서 바라본 카페 전경 -->
-          <figure
-            class="space-main-photo"
-            data-aos="zoom-in"
-            data-aos-duration="800"
-          >
+          <figure class="space-main-photo">
             <img
               src="images/탁 트인 시야.jpg"
               alt="2층에서 바라본 마고 카페 전경"
             />
-
-            <figcaption>
-              <h3>탁 트인 카페 전경</h3>
-            </figcaption>
           </figure>
 
           <!-- 자연 느낌의 카페 사진 2장 -->
           <section class="nature-photo-group">
-            <figure data-aos="zoom-in" data-aos-delay="100">
+            <figure>
               <img
                 src="images/마고플레인 풍경.jfif"
                 alt="자연의 분위기가 느껴지는 카페 내부"
               />
             </figure>
 
-            <figure data-aos="zoom-in" data-aos-delay="200">
+            <figure>
               <img
                 src="images/자연 느낌.jfif"
                 alt="초록빛 자연과 어우러진 카페 공간"
@@ -119,37 +115,38 @@
           </p>
         </section>
 
-        <div class="swiper seating-gallery" aria-label="좌석 사진 슬라이드">
+        <div
+          class="swiper seating-gallery"
+          aria-label="좌석 사진 슬라이드"
+          data-aos="zoom-in"
+        >
           <div class="swiper-wrapper">
-            <figure class="swiper-slide" data-aos="zoom-in" data-aos-delay="0">
+            <figure class="swiper-slide">
               <img
                 src="images/좌석사진.jfif"
                 alt="넉넉한 테이블과 좌석이 마련된 카페"
               />
             </figure>
 
-            <figure class="swiper-slide" data-aos="zoom-in" data-aos-delay="100">
+            <figure class="swiper-slide">
               <img
                 src="images/다운로드.jfif"
                 alt="다양한 좌석이 마련된 카페 공간"
               />
             </figure>
 
-            <figure class="swiper-slide" data-aos="zoom-in" data-aos-delay="200">
-              <img
-                src="images/1.PNG"
-                alt="실내 정원과 좌석이 어우러진 카페"
-              />
+            <figure class="swiper-slide">
+              <img src="images/1.PNG" alt="실내 정원과 좌석이 어우러진 카페" />
             </figure>
 
-            <figure class="swiper-slide" data-aos="zoom-in" data-aos-delay="300">
+            <figure class="swiper-slide">
               <img
                 src="images/다인원.jfif"
                 alt="다양한 인원이 이용할 수 있는 카페 좌석"
               />
             </figure>
 
-            <figure class="swiper-slide" data-aos="zoom-in" data-aos-delay="400">
+            <figure class="swiper-slide">
               <img
                 src="images/2층 자리.jfif"
                 alt="여러 인원이 함께 앉을 수 있는 좌석"
@@ -183,26 +180,24 @@
 
       <!-- 아이들을 위한 모래놀이 공간 -->
       <section class="kids-gallery-section">
-        <section class="gallery-heading">
-          <span data-aos="zoom-in">FOR CHILDREN</span>
-          <h2 data-aos="zoom-in">아이들에게도 즐거운 시간</h2>
-          <p data-aos="zoom-in" data-aos-delay="100">
-            아이들이 즐길 수 있는 모래놀이 공간
-          </p>
-        </section>
+        <div class="kids-gallery-layout">
+          <section class="gallery-heading kids-gallery-text">
+            <span data-aos="zoom-in">FOR CHILDREN</span>
+            <h2 data-aos="zoom-in">아이들에게도 즐거운 시간</h2>
+            <p data-aos="zoom-in" data-aos-delay="100">
+              아이들이 즐길 수 있는 모래놀이 공간
+            </p>
+          </section>
 
-        <section class="kids-gallery">
-          <figure data-aos="zoom-in" data-aos-delay="0">
-            <img
-              src="images/모래놀이1.PNG"
-              alt="마고 카페의 어린이 모래놀이 시설"
-            />
-          </figure>
-
-          <figure data-aos="zoom-in" data-aos-delay="150">
-            <img src="images/모래놀이2.PNG" alt="아이들을 위한 모래놀이 공간" />
-          </figure>
-        </section>
+          <section class="kids-gallery" data-aos="zoom-in">
+            <figure>
+              <img
+                src="images/지피티로 만든 모래놀이 사진.png"
+                alt="아이들이 즐길 수 있는 모래놀이 공간"
+              />
+            </figure>
+          </section>
+        </div>
       </section>
     </main>
 
@@ -215,43 +210,6 @@
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      const reducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
-
-      new Swiper(".seating-gallery", {
-        slidesPerView: 1.05,
-        spaceBetween: 16,
-        speed: reducedMotion ? 0 : 600,
-        freeMode: {
-          enabled: true,
-          sticky: false,
-        },
-        scrollbar: {
-          el: ".seating-gallery .swiper-scrollbar",
-          draggable: true,
-        },
-        breakpoints: {
-          600: {
-            slidesPerView: 1.8,
-            spaceBetween: 20,
-          },
-          900: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-        },
-      });
-
-      AOS.init({
-        once: false,
-        mirror: true,
-        offset: 120,
-        duration: 700,
-        easing: "ease-out-cubic",
-        disable: reducedMotion,
-      });
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>

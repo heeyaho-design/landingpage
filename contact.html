@@ -38,8 +38,8 @@
 
     <main>
       <section class="page-title">
-        <h1>RESERVATION & CONTACT</h1>
-        <p>방문 예약 및 문의사항을 남겨주세요.</p>
+        <h1>CONTACT</h1>
+        <p>문의사항을 남겨주세요. 또는 영업시간 내에 전화주세요.</p>
 
         <p class="contact-phone">☎ 전화 : 0507-1450-5322</p>
       </section>
@@ -104,70 +104,13 @@
       <p>© margaux. Have a happy day!</p>
     </footer>
 
-    <!-- 오늘 날짜 이전에는 방문 날짜 선택 불가 -->
-    <script>
-      const today = new Date();
-
-      const minDate = [
-        today.getFullYear(),
-        String(today.getMonth() + 1).padStart(2, "0"),
-        String(today.getDate()).padStart(2, "0"),
-      ].join("-");
-
-      document.getElementById("date").min = minDate;
-    </script>
-
     <!-- EmailJS 라이브러리 -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    <!-- EmailJS 문의 전송 -->
-    <script>
-      // EmailJS 초기화
-      emailjs.init({
-        publicKey: "xMGlQs2E8acu-dfd0",
-      });
-
-      const contactForm = document.getElementById("contact-form");
-      const submitBtn = document.getElementById("submit-btn");
-      const formStatus = document.getElementById("form-status");
-
-      contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = "전송 중...";
-        formStatus.textContent = "";
-
-        emailjs
-          .sendForm("service_0tepeim", "template_1wuti5g", contactForm)
-          .then(function () {
-            formStatus.textContent = "문의가 정상적으로 전송되었습니다.";
-
-            contactForm.reset();
-          })
-          .catch(function (error) {
-            console.error("EmailJS 전송 오류:", error);
-
-            formStatus.textContent =
-              "전송에 실패했습니다. 잠시 후 다시 시도해주세요.";
-          })
-          .finally(function () {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "문의 내용 제출";
-          });
-      });
-    </script>
-
+    <!-- AOS 라이브러리 -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        once: false,
-        mirror: true,
-        offset: 120,
-        duration: 700,
-        easing: "ease-out-cubic",
-        disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-      });
-    </script>
+
+    <!-- 공통 JavaScript -->
+    <script src="js/script.js"></script>
   </body>
 </html>
