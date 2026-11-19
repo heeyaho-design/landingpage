@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-  <circle cx="36" cy="36" r="36" fill="#f6dfb8"/>
-  <!-- 초승달 모양 빵 -->
-  <path d="M10 44 C12 24 28 14 44 16 C56 18 64 28 62 42 C56 34 46 30 36 32 C26 34 18 40 10 44 Z" fill="#d8923f"/>
-  <!-- 빵 결 -->
-  <path d="M26 22 L30 34" fill="none" stroke="#a9651f" stroke-width="3" stroke-linecap="round"/>
-  <path d="M38 17 L38 31" fill="none" stroke="#a9651f" stroke-width="3" stroke-linecap="round"/>
-  <path d="M50 20 L46 32" fill="none" stroke="#a9651f" stroke-width="3" stroke-linecap="round"/>
-</svg>
