@@ -59,13 +59,14 @@ main {
 
 .operation-info {
   display: grid;
+  max-width: 850px;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
   margin: 0 auto;
 }
 
 .operation-card {
-  padding: 40px 30px;
+  padding: 32px 25px;
   text-align: center;
   background-color: #ffffff;
   border: 1px solid #e8e5d9;
