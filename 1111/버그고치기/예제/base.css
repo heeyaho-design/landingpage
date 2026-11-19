@@ -1,0 +1,149 @@
+/* =====================================================
+   base.css : 모닝빈 카페의 색, 글자, 여백을 담당하는 파일
+   -----------------------------------------------------
+   이미 완성되어 있습니다. 이 파일은 고치지 않아요.
+   (배치는 layout.css 에서 따로 작성합니다.)
+   ===================================================== */
+
+/* 페이지 전체 */
+body {
+  margin: 0;
+  background-color: #f6efe6;
+  color: #3b2a20;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  line-height: 1.6;
+}
+
+/* 내용을 화면 가운데 960px 폭으로 모으는 상자 */
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+
+/* 1. 맨 위 줄 */
+.header {
+  padding: 18px 0;
+  border-bottom: 2px solid #3b2a20;
+}
+
+.logo {
+  margin: 0;
+  font-size: 30px;
+}
+
+.nav-link {
+  color: #3b2a20;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* 2. 소개 영역 */
+.hero {
+  margin-top: 28px;
+  padding: 32px 40px;
+  background-color: #3b2a20;
+  color: #fff8ee;
+  border-radius: 20px;
+}
+
+.hero-title {
+  margin: 0 0 10px;
+  font-size: 32px;
+  line-height: 1.3;
+}
+
+.hero-desc {
+  margin: 0;
+  font-size: 17px;
+  color: #e6d5c3;
+}
+
+.hero-img {
+  width: 220px;
+  height: 180px;
+}
+
+/* 3. 태그 줄 */
+.tags {
+  margin-top: 20px;
+}
+
+.tag {
+  padding: 6px 14px;
+  background-color: #ffffff;
+  border: 1px solid #d9c7b3;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+/* 4. 인기 메뉴 */
+.section-title {
+  margin: 44px 0 16px;
+  font-size: 22px;
+}
+
+.card {
+  padding: 22px 16px;
+  background-color: #ffffff;
+  border: 1px solid #e3d5c5;
+  border-radius: 16px;
+}
+
+/* 대표 메뉴 카드는 색을 다르게 */
+.best {
+  background-color: #ffe9c7;
+  border: 1px solid #e8b96a;
+}
+
+.card-img {
+  width: 72px;
+  height: 72px;
+}
+
+.card-name {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card-desc {
+  margin: 0;
+  font-size: 14px;
+  color: #7a6657;
+}
+
+.card-price {
+  margin: 0;
+  font-weight: bold;
+  color: #b5622d;
+}
+
+/* 5. 매장 안내 */
+.info-box {
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e3d5c5;
+  border-radius: 16px;
+}
+
+.info-title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  color: #b5622d;
+}
+
+.info-text {
+  margin: 0;
+  font-size: 15px;
+}
+
+/* 6. 맨 아래 줄 */
+.footer {
+  margin-top: 44px;
+  padding-top: 18px;
+  border-top: 1px solid #d9c7b3;
+  font-size: 14px;
+  color: #7a6657;
+  text-align: center;
+}

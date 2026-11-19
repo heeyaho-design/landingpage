@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
+  <circle cx="36" cy="36" r="36" fill="#f3c98b"/>
+  <!-- 손잡이 -->
+  <path d="M50 30 C62 30 62 46 49 46" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <!-- 잔 -->
+  <path d="M16 24 H52 V40 C52 52 44 58 34 58 C24 58 16 52 16 40 Z" fill="#ffffff"/>
+  <!-- 라떼 -->
+  <ellipse cx="34" cy="25" rx="16" ry="4" fill="#c8915c"/>
+  <!-- 우유 거품 무늬 -->
+  <ellipse cx="34" cy="25" rx="7" ry="2" fill="#fff8ee"/>
+</svg>

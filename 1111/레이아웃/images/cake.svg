@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
+  <circle cx="36" cy="36" r="36" fill="#f8cfd0"/>
+  <!-- 딸기 -->
+  <circle cx="36" cy="20" r="7" fill="#d9473f"/>
+  <path d="M33 13 L36 16 L39 13" fill="none" stroke="#5f8f3a" stroke-width="3" stroke-linecap="round"/>
+  <!-- 크림 -->
+  <rect x="14" y="26" width="44" height="9" rx="4" fill="#ffffff"/>
+  <!-- 케이크 시트 -->
+  <rect x="16" y="35" width="40" height="20" fill="#f3d9a4"/>
+  <!-- 가운데 크림 줄 -->
+  <rect x="16" y="43" width="40" height="4" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice">
+  <!-- 마지막 기차 : 보랏빛 산과 기차 -->
+  <rect width="300" height="200" fill="#6a4c93"/>
+  <!-- 산 -->
+  <path d="M0 150 L70 70 L130 150 Z" fill="#4b3470"/>
+  <path d="M90 150 L180 50 L270 150 Z" fill="#553c7d"/>
+  <path d="M168 64 L180 50 L192 64 L180 72 Z" fill="#ffffff"/>
+  <!-- 땅과 선로 -->
+  <rect y="150" width="300" height="50" fill="#2d2046"/>
+  <rect y="172" width="300" height="4" fill="#c9b8e8"/>
+  <!-- 기차 -->
+  <rect x="70" y="128" width="150" height="38" rx="8" fill="#ffc94a"/>
+  <rect x="84" y="136" width="22" height="14" rx="3" fill="#2d2046"/>
+  <rect x="114" y="136" width="22" height="14" rx="3" fill="#2d2046"/>
+  <rect x="144" y="136" width="22" height="14" rx="3" fill="#2d2046"/>
+  <rect x="174" y="136" width="30" height="14" rx="3" fill="#2d2046"/>
+  <circle cx="100" cy="168" r="7" fill="#12162a"/>
+  <circle cx="190" cy="168" r="7" fill="#12162a"/>
+</svg>
